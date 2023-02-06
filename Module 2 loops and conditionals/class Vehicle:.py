@@ -8,6 +8,7 @@ class Automobile(Vehicle):
         self.year: int = 0
         self.make: str = ''
         self.medel: str = ''
+        self.doors: int = 2
         self.roof: str = 'solid'
 
 car = Automobile(vehicle_type='car') 
