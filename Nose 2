@@ -1,0 +1,38 @@
+Last login: Sat Feb 25 10:15:22 on ttys002
+(base) Clementes-MBP:~ derosaclemente$ test*.py
+-bash: test*.py: command not found
+(base) Clementes-MBP:~ derosaclemente$ python -m nose2
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+(base) Clementes-MBP:~ derosaclemente$ test*.py
+-bash: test*.py: command not found
+(base) Clementes-MBP:~ derosaclemente$ python -m nose2 test*py
+E
+======================================================================
+ERROR: test*py (nose2.loader.LoadTestsFailure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/nose2/_vendor/six.py", line 719, in reraise
+    raise value
+  File "/opt/anaconda3/lib/python3.9/site-packages/nose2/plugins/loader/functions.py", line 81, in loadTestsFromName
+    result = util.test_from_name(name, module)
+  File "/opt/anaconda3/lib/python3.9/site-packages/nose2/util.py", line 92, in test_from_name
+    parent, obj = object_from_name(name, module)
+  File "/opt/anaconda3/lib/python3.9/site-packages/nose2/util.py", line 112, in object_from_name
+    (module, import_error) = try_import_module_from_name(parts[:])
+  File "/opt/anaconda3/lib/python3.9/site-packages/nose2/util.py", line 171, in try_import_module_from_name
+    six.reraise(*import_error)
+  File "/opt/anaconda3/lib/python3.9/site-packages/nose2/_vendor/six.py", line 719, in reraise
+    raise value
+  File "/opt/anaconda3/lib/python3.9/site-packages/nose2/util.py", line 165, in try_import_module_from_name
+    module = __import__(".".join(splitted_name))
+ModuleNotFoundError: No module named 'test*py'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
+(base) Clementes-MBP:~ derosaclemente$ 
